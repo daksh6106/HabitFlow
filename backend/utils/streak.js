@@ -159,7 +159,7 @@ function checkAchievements(user){
 
 async function checkHabitAchievements(userId){
 
-    const Habit = require("../models/Habit");
+    const Habit = require("../models/habit");
 
     const user = await User.findById(userId);
 
