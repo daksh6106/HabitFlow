@@ -1,0 +1,141 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f1115;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:1100px;
+    max-width:95%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    background:#181b22;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+.left{
+    background:linear-gradient(135deg,#45E08D,#22b86b);
+    color:#111;
+    padding:60px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.left h1{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.left p{
+    font-size:18px;
+    line-height:1.8;
+}
+
+.right{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:50px;
+}
+
+.card{
+    width:100%;
+    max-width:420px;
+}
+
+.card h2{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#999;
+    margin-bottom:30px;
+}
+
+.card input{
+    width:100%;
+    padding:15px;
+    margin-bottom:18px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:#0f1115;
+    color:white;
+    border:1px solid #333;
+    transition:.3s;
+}
+
+.card input:focus{
+    border-color:#45E08D;
+}
+
+.card button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#45E08D;
+    color:#111;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.card button:hover{
+    transform:translateY(-2px);
+    opacity:.95;
+}
+
+#message{
+    text-align:center;
+    margin-top:18px;
+    color:#45E08D;
+    min-height:24px;
+}
+
+.bottom{
+    margin-top:30px;
+    text-align:center;
+    color:#aaa;
+}
+
+.bottom a{
+    color:#45E08D;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.bottom a:hover{
+    text-decoration:underline;
+}
+
+@media(max-width:900px){
+
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    .left{
+        display:none;
+    }
+
+    .right{
+        padding:35px;
+    }
+
+}

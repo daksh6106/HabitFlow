@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Profile | HabitFlow</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="sidebar.css">
+<link rel="stylesheet" href="profile.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+        <h1>🔥 HabitFlow</h1>
+        <p>Build Better Habits</p>
+    </div>
+
+    <ul class="menu">
+
+        <li>
+            <a href="dashboard.html" class="nav-link">
+                🏠 Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="myhabits.html" class="nav-link">
+                ✅ My Habits
+            </a>
+        </li>
+
+        <li>
+            <a href="analytics.html" class="nav-link">
+                📊 Analytics
+            </a>
+        </li>
+
+        <li>
+            <a href="calendar.html" class="nav-link">
+                📅 Calendar
+            </a>
+        </li>
+
+        <li>
+            <a href="profile.html" class="nav-link active">
+                👤 Profile
+            </a>
+        </li>
+
+        <li>
+            <a href="settings.html" class="nav-link">
+                ⚙️ Settings
+            </a>
+        </li>
+
+        <li>
+            <a href="#" id="logoutBtn" class="nav-link logout">
+                🚪 Logout
+            </a>
+        </li>
+
+    </ul>
+
+</aside>
+
+
+
+
+
+<!-- Main -->
+
+<main class="main-content">
+
+
+<header class="topbar">
+
+
+<div style="display:flex;gap:15px;">
+
+<button id="themeToggle" onclick="toggleTheme()">
+🌙 Dark Mode
+</button>
+
+<button onclick="window.location.href='dashboard.html'">
+← Dashboard
+</button>
+
+</div>
+
+
+</header>
+<!-- Profile Section -->
+
+<section class="profile-section">
+
+
+<div class="profile-card">
+
+
+<div class="profile-avatar">
+
+👤
+
+</div>
+
+
+<h2 id="profileName">
+Loading...
+</h2>
+
+
+<p id="profileEmail">
+Loading...
+</p>
+
+
+</div>
+
+
+
+
+
+<!-- Stats Cards -->
+
+<section class="profile-stats">
+
+
+<div class="profile-stat-card">
+
+<h3>
+🔥 Current Streak
+</h3>
+
+<h1 id="currentStreak">
+0
+</h1>
+
+<p>
+Days
+</p>
+
+</div>
+
+
+
+
+
+<div class="profile-stat-card">
+
+<h3>
+🏆 Longest Streak
+</h3>
+
+<h1 id="longestStreak">
+0
+</h1>
+
+<p>
+Best
+</p>
+
+</div>
+
+
+
+
+
+<div class="profile-stat-card">
+
+<h3>
+📅 Joined
+</h3>
+
+<h1 id="joinedDate">
+--
+</h1>
+
+<p>
+Member
+</p>
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- Activity Stats -->
+
+
+<section class="activity-section">
+
+
+<h2>
+📊 Habit Statistics
+</h2>
+
+
+
+<div class="activity-grid">
+
+
+<div class="activity-card">
+
+<h3>
+Total Habits
+</h3>
+
+<h1 id="totalHabits">
+0
+</h1>
+
+</div>
+
+
+
+<div class="activity-card">
+
+<h3>
+Completed
+</h3>
+
+<h1 id="completedHabits">
+0
+</h1>
+
+</div>
+
+
+
+<div class="activity-card">
+
+<h3>
+Completion Rate
+</h3>
+
+<h1 id="completionRate">
+0%
+</h1>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+<!-- Progress Section -->
+
+<section class="profile-progress">
+
+
+<h2>
+🎯 Overall Progress
+</h2>
+
+
+<div class="progress-bar">
+
+<div 
+class="progress-fill"
+id="profileProgressFill">
+</div>
+
+</div>
+
+
+<p id="progressText">
+0% completed
+</p>
+
+
+</section>
+
+
+
+
+</main>
+
+
+</div>
+
+
+
+
+
+
+<script src="profile.js"></script>
+<script src="sidebar.js"></script>
+
+</body>
+
+</html>

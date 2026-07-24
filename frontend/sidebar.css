@@ -1,0 +1,56 @@
+/* ===========================
+   HabitFlow Common Sidebar
+=========================== */
+
+.sidebar{
+    width:280px;
+    min-height:100vh;
+    background:#171b24;
+    padding:30px 20px;
+    flex-shrink:0;
+}
+
+.logo h1{
+    color:#46df8c;
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+.logo p{
+    color:#fff;
+    margin-bottom:40px;
+}
+
+.menu{
+    list-style:none;
+}
+
+.menu li{
+    margin-bottom:18px;
+}
+
+.nav-link{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:#fff;
+    font-size:25px;
+    padding:18px 22px;
+    border-radius:18px;
+    transition:.3s;
+}
+
+.nav-link:hover{
+    background:#232833;
+}
+
+.nav-link.active{
+    background:#46df8c;
+    color:#000;
+    font-weight:600;
+}
+
+.logout{
+    margin-top:40px;
+}

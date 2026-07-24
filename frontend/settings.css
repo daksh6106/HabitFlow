@@ -1,0 +1,386 @@
+/* =====================================
+   HabitFlow Settings CSS
+===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* =========================
+   Main Content
+========================= */
+
+.main-content{
+    flex:1;
+    padding:35px;
+    overflow-y:auto;
+}
+
+/* =========================
+   Page Title
+========================= */
+
+.page-title{
+    margin-bottom:25px;
+}
+
+.page-title h1{
+    font-size:30px;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.page-title p{
+    color:#999;
+    font-size:15px;
+}
+
+/* =========================
+   Cards
+========================= */
+
+.settings-card{
+
+    background:#171c24;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:15px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+.settings-card h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:20px;
+
+    font-size:20px;
+
+    color:#fff;
+
+}
+
+/* =========================
+   Inputs
+========================= */
+
+.settings-card input{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-top:12px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:10px;
+
+    background:#222a35;
+
+    color:#fff;
+
+    font-size:15px;
+
+}
+
+.settings-card input:focus{
+
+    border:1px solid #4CAF50;
+
+}
+
+/* =========================
+   User Info
+========================= */
+
+.info-box{
+
+    margin-bottom:18px;
+
+}
+
+.info-box label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#aaa;
+
+    font-size:14px;
+
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.settings-card button{
+
+    margin-top:20px;
+
+    padding:13px 20px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#4CAF50;
+
+    color:white;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.settings-card button:hover{
+
+    transform:translateY(-2px);
+
+    background:#43a047;
+
+}
+
+/* =========================
+   Logout Button
+========================= */
+
+.logout-btn{
+
+    width:100%;
+
+    background:#e53935 !important;
+
+}
+
+.logout-btn:hover{
+
+    background:#c62828 !important;
+
+}
+
+/* =========================
+   Theme Toggle
+========================= */
+
+.setting-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.setting-row span{
+
+    font-size:16px;
+
+}
+
+/* Switch */
+
+.switch{
+
+    position:relative;
+
+    display:inline-block;
+
+    width:60px;
+
+    height:32px;
+
+}
+
+.switch input{
+
+    display:none;
+
+}
+
+.slider{
+
+    position:absolute;
+
+    cursor:pointer;
+
+    inset:0;
+
+    background:#555;
+
+    border-radius:40px;
+
+    transition:.3s;
+
+}
+
+.slider::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:24px;
+
+    height:24px;
+
+    left:4px;
+
+    bottom:4px;
+
+    background:white;
+
+    border-radius:50%;
+
+    transition:.3s;
+
+}
+
+input:checked + .slider{
+
+    background:#4CAF50;
+
+}
+
+input:checked + .slider::before{
+
+    transform:translateX(28px);
+
+}
+
+/* =========================
+   Light Theme
+========================= */
+
+body.light{
+
+    background:#f5f5f5;
+
+    color:#222;
+
+}
+
+body.light .settings-card{
+
+    background:#ffffff;
+
+    border:1px solid #ddd;
+
+}
+
+body.light .settings-card h2{
+
+    color:#222;
+
+}
+
+body.light input{
+
+    background:#f2f2f2;
+
+    color:#222;
+
+}
+
+body.light .page-title p{
+
+    color:#666;
+
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media(max-width:768px){
+
+    .main-content{
+
+        padding:20px;
+
+    }
+
+    
+    .settings-card{
+
+        padding:18px;
+
+    }
+
+}
+.sidebar{
+    width:280px;
+    min-height:100vh;
+    background:#171b24;
+    padding:30px 20px;
+}
+
+.logo h1{
+    color:#46df8c;
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+.logo p{
+    color:#fff;
+    margin-bottom:40px;
+}
+
+.menu{
+    list-style:none;
+}
+
+.menu li{
+    margin-bottom:18px;
+}
+
+.nav-link{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    text-decoration:none;
+    color:white;
+
+    font-size:25px;
+    padding:18px 22px;
+
+    border-radius:18px;
+    transition:.3s;
+}
+
+.nav-link:hover{
+    background:#232833;
+}
+
+.nav-link.active{
+    background:#46df8c;
+    color:#000;
+    font-weight:600;
+}
+
+.logout{
+    margin-top:40px;
+}

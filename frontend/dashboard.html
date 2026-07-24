@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard | HabitFlow</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="sidebar.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- Sidebar -->
+<aside class="sidebar">
+
+    <div class="logo">
+        <h1>🔥 HabitFlow</h1>
+        <p>Build Better Habits</p>
+    </div>
+
+    <ul class="menu">
+
+        <li>
+            <a href="dashboard.html" class="nav-link active">
+                🏠 Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="myhabits.html" class="nav-link">
+                ✅ My Habits
+            </a>
+        </li>
+
+        <li>
+            <a href="analytics.html" class="nav-link">
+                📊 Analytics
+            </a>
+        </li>
+
+        <li>
+            <a href="calendar.html" class="nav-link">
+                📅 Calendar
+            </a>
+        </li>
+
+        <li>
+            <a href="profile.html" class="nav-link">
+                👤 Profile
+            </a>
+        </li>
+
+        <li>
+            <a href="settings.html" class="nav-link">
+                ⚙️ Settings
+            </a>
+        </li>
+
+        <li>
+            <a href="#" id="logoutBtn" class="nav-link logout">
+                🚪 Logout
+            </a>
+        </li>
+
+    </ul>
+
+</aside>
+
+
+
+<!-- Main -->
+
+<main class="main-content">
+
+
+<header>
+
+    <div>
+
+        <h1 id="welcomeText">
+            Good Morning 👋
+        </h1>
+
+        <p>
+            Keep your streak alive today.
+        </p>
+
+    </div>
+
+    <div class="top-actions">
+
+        <button id="themeToggle" onclick="toggleTheme()">
+            🌙 Dark Mode
+        </button>
+
+        <button onclick="openHabitForm()">
+            Add Habit
+        </button>
+
+    </div>
+
+</header>
+
+
+
+
+<!-- Add Habit Form -->
+
+<section class="add-form" id="habitForm" style="display:none;">
+
+
+<h2>Add New Habit</h2>
+
+
+<input 
+type="text"
+id="habitName"
+placeholder="Habit name"
+/>
+
+
+<input 
+type="text"
+id="habitDescription"
+placeholder="Description"
+/>
+
+
+<button onclick="addHabit()">
+Save Habit
+</button>
+
+
+</section>
+
+
+
+
+<!-- Cards -->
+
+<section class="cards">
+
+
+<div class="card">
+
+<h3>Total Habits</h3>
+
+<h1 id="totalHabits">
+0
+</h1>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Completed</h3>
+
+<h1 id="completedHabits">
+0
+</h1>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>Current Streak</h3>
+
+<h1 id="streak">
+🔥 0
+</h1>
+
+</div>
+
+
+
+
+<div class="card">
+
+    <h3>Progress</h3>
+
+    <h1 id="progress">0%</h1>
+
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- Analytics Chart -->
+
+<section class="chart-section">
+
+    <h2>Habit Analytics</h2>
+
+    <canvas id="habitChart"></canvas>
+
+</section>
+
+<!-- Achievement Badges -->
+
+<section class="badges-section">
+
+    <h2>🏆 Achievement Badges</h2>
+
+    <div class="badges-grid">
+
+        <div class="badge locked" id="badge1">
+            🥇
+            <p>First Habit</p>
+        </div>
+
+        <div class="badge locked" id="badge2">
+            🔥
+            <p>10 Completed</p>
+        </div>
+
+        <div class="badge locked" id="badge3">
+            🚀
+            <p>25 Completed</p>
+        </div>
+
+        <div class="badge locked" id="badge4">
+            👑
+            <p>Habit Master</p>
+        </div>
+
+    </div>
+
+</section>
+<!-- Calendar -->
+
+<section class="calendar-section">
+
+    <div class="calendar-top">
+
+        <div>
+
+            <h2>📅 Habit Calendar</h2>
+            <p>Track your consistency every day.</p>
+
+        </div>
+
+        <div class="calendar-nav">
+
+            <button id="prevMonth">❮</button>
+
+            <h3 id="monthYear"></h3>
+
+            <button id="nextMonth">❯</button>
+
+        </div>
+
+    </div>
+
+    <div class="calendar-weekdays">
+
+        <span>Sun</span>
+        <span>Mon</span>
+        <span>Tue</span>
+        <span>Wed</span>
+        <span>Thu</span>
+        <span>Fri</span>
+        <span>Sat</span>
+
+    </div>
+
+<div id="calendar"></div>
+
+    <div class="calendar-summary">
+
+        <div class="summary-card">
+
+            <h4>Completed Days</h4>
+
+            <h2 id="completedDaysMonth">0</h2>
+
+        </div>
+
+        <div class="summary-card">
+
+            <h4>Current Streak</h4>
+
+            <h2 id="currentStreakCard">🔥 0</h2>
+
+        </div>
+
+        <div class="summary-card">
+
+            <h4>Completion</h4>
+
+            <h2 id="completionRate">0%</h2>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Today's Habits -->
+
+
+<section class="habits">
+
+
+<h2>
+Today's Habits
+</h2>
+<input
+    type="text"
+    id="searchHabit"
+    placeholder="🔍 Search habits..."
+    onkeyup="searchHabit()"
+/>
+<div class="filter-buttons">
+
+    <button onclick="showAllHabits()">All</button>
+
+    <button onclick="showCompletedHabits()">Completed</button>
+
+    <button onclick="showPendingHabits()">Pending</button>
+
+</div>
+
+
+
+<div id="habitList">
+
+
+<!-- Habits MongoDB se yaha ayengi -->
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+</main>
+
+
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="dashboard.js"></script>
+<script src="sidebar.js"></script>
+</body>
+
+</html>

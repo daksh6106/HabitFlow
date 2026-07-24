@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabitFlow | Analytics</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="analytics.css">
+    <link rel="stylesheet" href="sidebar.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+<div class="container">
+
+
+    <!-- ================= Sidebar ================= -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+        <h1>🔥 HabitFlow</h1>
+        <p>Build Better Habits</p>
+    </div>
+
+    <ul class="menu">
+
+        <li>
+            <a href="dashboard.html" class="nav-link">
+                🏠 Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="myhabits.html" class="nav-link">
+                ✅ My Habits
+            </a>
+        </li>
+
+        <li>
+            <a href="analytics.html" class="nav-link active">
+                📊 Analytics
+            </a>
+        </li>
+
+        <li>
+            <a href="calendar.html" class="nav-link">
+                📅 Calendar
+            </a>
+        </li>
+
+        <li>
+            <a href="profile.html" class="nav-link">
+                👤 Profile
+            </a>
+        </li>
+
+        <li>
+            <a href="settings.html" class="nav-link">
+                ⚙️ Settings
+            </a>
+        </li>
+
+        <li>
+            <a href="#" id="logoutBtn" class="nav-link logout">
+                🚪 Logout
+            </a>
+        </li>
+
+    </ul>
+
+</aside>
+
+    <!-- ================= Main Content ================= -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+                    Analytics Dashboard
+                </h1>
+
+                <p>
+                    Track your productivity and habit performance.
+                </p>
+
+            </div>
+
+            <div class="top-actions">
+
+                <button id="themeToggle">
+                    🌙
+                </button>
+
+                <button onclick="window.location='dashboard.html'">
+                    ← Back to Dashboard
+                </button>
+
+            </div>
+
+        </header>
+
+        <!-- ================= Overview Cards ================= -->
+
+        <section class="analytics-cards">
+
+            <div class="analytics-card">
+
+                <span>Total Habits</span>
+
+                <h2 id="totalHabits">
+                    0
+                </h2>
+
+            </div>
+
+            <div class="analytics-card">
+
+                <span>Completed</span>
+
+                <h2 id="completedHabits">
+                    0
+                </h2>
+
+            </div>
+
+            <div class="analytics-card">
+
+                <span>Pending</span>
+
+                <h2 id="pendingHabits">
+                    0
+                </h2>
+
+            </div>
+
+            <div class="analytics-card">
+
+                <span>Completion Rate</span>
+
+                <h2 id="completionRate">
+                    0%
+                </h2>
+
+            </div>
+
+        </section>
+
+        <!-- ================= Weekly Summary ================= -->
+
+        <section class="summary-section">
+
+            <div class="summary-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        Weekly Summary
+                    </h2>
+
+                </div>
+
+                <div class="summary-grid">
+
+                    <div class="summary-box">
+
+                        <h3 id="weekCompleted">
+                            0
+                        </h3>
+
+                        <p>
+                            Completed
+                        </p>
+
+                    </div>
+
+                    <div class="summary-box">
+
+                        <h3 id="weekMissed">
+                            0
+                        </h3>
+
+                        <p>
+                            Missed
+                        </p>
+
+                    </div>
+
+                    <div class="summary-box">
+
+                        <h3 id="weekSuccess">
+                            0%
+                        </h3>
+
+                        <p>
+                            Success Rate
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Monthly -->
+
+            <div class="summary-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        Monthly Summary
+                    </h2>
+
+                </div>
+
+                <div class="summary-grid">
+
+                    <div class="summary-box">
+
+                        <h3 id="monthCompleted">
+                            0
+                        </h3>
+
+                        <p>
+                            Completed
+                        </p>
+
+                    </div>
+
+                    <div class="summary-box">
+
+                        <h3 id="monthMissed">
+                            0
+                        </h3>
+
+                        <p>
+                            Missed
+                        </p>
+
+                    </div>
+
+                    <div class="summary-box">
+
+                        <h3 id="monthSuccess">
+                            0%
+                        </h3>
+
+                        <p>
+                            Success Rate
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= Charts ================= -->
+
+        <section class="chart-grid">
+
+            <div class="chart-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        Habit Distribution
+                    </h2>
+
+                </div>
+
+                <canvas id="pieChart"></canvas>
+
+            </div>
+
+            <div class="chart-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        Weekly Progress
+                    </h2>
+
+                </div>
+
+                <canvas id="barChart"></canvas>
+
+            </div>
+
+        </section>
+
+        <!-- ================= Calendar ================= -->
+
+<section class="calendar-section">
+
+    <div class="chart-card">
+
+        <div class="section-header">
+            <h2>
+                Habit Calendar
+            </h2>
+        </div>
+
+
+       <div id="calendar"></div>
+
+        </div>
+
+
+</section>
+
+    </main>
+
+</div>
+
+<script src="analytics.js"></script>
+<script src="sidebar.js"></script>
+</body>
+</html>

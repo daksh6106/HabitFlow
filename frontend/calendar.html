@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calendar | HabitFlow</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="sidebar.css">
+<link rel="stylesheet" href="calendar.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ================= Sidebar ================= -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+        <h1>🔥 HabitFlow</h1>
+        <p>Build Better Habits</p>
+    </div>
+
+    <ul class="menu">
+
+        <li>
+            <a href="dashboard.html" class="nav-link">
+                🏠 Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="myhabits.html" class="nav-link">
+                ✅ My Habits
+            </a>
+        </li>
+
+        <li>
+            <a href="analytics.html" class="nav-link">
+                📊 Analytics
+            </a>
+        </li>
+
+        <li>
+            <a href="calendar.html" class="nav-link active">
+                📅 Calendar
+            </a>
+        </li>
+
+        <li>
+            <a href="profile.html" class="nav-link">
+                👤 Profile
+            </a>
+        </li>
+
+        <li>
+            <a href="settings.html" class="nav-link">
+                ⚙️ Settings
+            </a>
+        </li>
+
+        <li>
+            <a href="#" id="logoutBtn" class="nav-link logout">
+                🚪 Logout
+            </a>
+        </li>
+
+    </ul>
+
+</aside>
+
+    <!-- ================= Main ================= -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>📅 Habit Calendar</h1>
+
+                <p>
+                    View your monthly habit progress.
+                </p>
+
+            </div>
+
+            <div class="top-actions">
+
+                <button onclick="window.location.href='dashboard.html'">
+                    ← Dashboard
+                </button>
+
+            </div>
+
+        </header>
+
+        <!-- Calendar Card -->
+
+        <section class="calendar-card">
+
+            <div class="calendar-header">
+
+                <button id="prevMonth">
+                    ❮
+                </button>
+
+                <h2 id="monthYear">
+                    July 2026
+                </h2>
+
+                <button id="nextMonth">
+                    ❯
+                </button>
+
+            </div>
+
+            <!-- Week Days -->
+
+            <div class="weekdays">
+
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+
+            </div>
+
+            <!-- Calendar -->
+
+            <div id="calendar" class="calendar-grid">
+
+            </div>
+
+        </section>
+
+        <!-- Summary -->
+
+        <section class="calendar-summary">
+
+            <div class="summary-box">
+
+                <h2 id="completedDays">
+                    0
+                </h2>
+
+                <p>Completed Days</p>
+
+            </div>
+
+            <div class="summary-box">
+
+                <h2 id="currentMonthHabits">
+                    0
+                </h2>
+
+                <p>Total Habits</p>
+
+            </div>
+
+            <div class="summary-box">
+
+                <h2 id="completionPercent">
+                    0%
+                </h2>
+
+                <p>Completion</p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="calendar.js"></script>
+<script src="sidebar.js"></script>
+
+</body>
+
+</html>

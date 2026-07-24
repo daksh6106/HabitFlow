@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Habits | HabitFlow</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="myhabits.css">
+<link rel="stylesheet" href="sidebar.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- ================= Sidebar ================= -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+        <h1>🔥 HabitFlow</h1>
+        <p>Build Better Habits</p>
+    </div>
+
+    <ul class="menu">
+
+        <li>
+            <a href="dashboard.html" class="nav-link">
+                🏠 Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="myhabits.html" class="nav-link active">
+                ✅ My Habits
+            </a>
+        </li>
+
+        <li>
+            <a href="analytics.html" class="nav-link">
+                📊 Analytics
+            </a>
+        </li>
+
+        <li>
+            <a href="calendar.html" class="nav-link">
+                📅 Calendar
+            </a>
+        </li>
+
+        <li>
+            <a href="profile.html" class="nav-link">
+                👤 Profile
+            </a>
+        </li>
+
+        <li>
+            <a href="settings.html" class="nav-link">
+                ⚙️ Settings
+            </a>
+        </li>
+
+        <li>
+            <a href="#" id="logoutBtn" class="nav-link logout">
+                🚪 Logout
+            </a>
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- ================= Main ================= -->
+<main class="main-content">
+
+<header>
+
+<div>
+
+<h1>✅ My Habits</h1>
+
+<p>
+Manage all your habits in one place.
+</p>
+
+</div>
+
+<div class="top-actions">
+
+<button onclick="window.location.href='dashboard.html'">
+← Dashboard
+</button>
+
+</div>
+</header>
+
+<!-- ================= Search ================= -->
+
+<section class="search-section">
+
+<input
+type="text"
+id="searchHabit"
+placeholder="🔍 Search habits..."
+onkeyup="searchHabit()"
+/>
+
+</section>
+
+<!-- ================= Filter ================= -->
+
+<section class="filter-buttons">
+
+<button onclick="showAllHabits()">
+All
+</button>
+
+<button onclick="showCompletedHabits()">
+Completed
+</button>
+
+<button onclick="showPendingHabits()">
+Pending
+</button>
+
+</section>
+
+<!-- ================= Habit List ================= -->
+
+<section class="habits">
+
+<div id="habitList">
+
+<!-- MongoDB habits will load here -->
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="myhabits.js"></script>
+<script src="sidebar.js"></script>
+</body>
+
+</html>
