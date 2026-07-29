@@ -17,13 +17,14 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin:[
+    origin: [
+        "https://habit-flow-8vok-eta.vercel.app",
         "http://127.0.0.1:5500",
-        "http://localhost:5500",
-        "https://YOUR-VERCEL-DOMAIN.vercel.app"
+        "http://localhost:5500"
     ],
-    methods:["GET","POST","PUT","DELETE"],
-    credentials:true
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true
 }));
 app.use(express.json());
 app.use("/api/habits", habitRoutes);
