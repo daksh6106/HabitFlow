@@ -1,6 +1,6 @@
 console.log("script loaded");
 
-fetch("http://localhost:5000/api/test")
+fetch("https://habitflow-backend-xu2r.onrender.com/api/test")
     .then(response => {
         console.log("Response received");
         return response.json();

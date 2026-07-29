@@ -2,7 +2,7 @@
 // HabitFlow Calendar JS
 // =======================================
 
-const API_URL = "http://localhost:5000/api/habits";
+const API_URL = "https://habitflow-backend-xu2r.onrender.com";
 
 const token = localStorage.getItem("token");
 

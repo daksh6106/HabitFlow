@@ -3,8 +3,8 @@
 // ===================================
 
 
-const USER_API = "http://localhost:5000/api/users/me";
-const HABIT_API = "http://localhost:5000/api/habits";
+const USER_API = "https://habitflow-backend-xu2r.onrender.com/api/users/me";
+const HABIT_API = "https://habitflow-backend-xu2r.onrender.com/api/habits";
 
 
 const token = localStorage.getItem("token");

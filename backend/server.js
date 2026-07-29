@@ -16,7 +16,15 @@ const app = express();
 
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin:[
+        "http://127.0.0.1:5500",
+        "http://localhost:5500",
+        "https://YOUR-VERCEL-DOMAIN.vercel.app"
+    ],
+    methods:["GET","POST","PUT","DELETE"],
+    credentials:true
+}));
 app.use(express.json());
 app.use("/api/habits", habitRoutes);
 app.use("/api/users", userRoutes);
@@ -41,8 +49,10 @@ mongoose.connect(process.env.MONGO_URI)
 .then(() => {
     console.log("✅ MongoDB Connected");
 
-    app.listen(5000, () => {
-        console.log("🚀 Server running on port 5000");
+    const PORT = process.env.PORT || 5000;
+
+    app.listen(PORT, () => {
+        console.log(`🚀 Server running on port ${PORT}`);
     });
 
 })

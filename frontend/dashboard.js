@@ -8,9 +8,8 @@
 // API
 // ===============================
 
-const DASHBOARD_API_URL = "http://localhost:5000/api/habits";
-const USER_API_URL = "http://localhost:5000/api/users/me";
-
+const DASHBOARD_API_URL = "https://habitflow-backend-xu2r.onrender.com/api/habits";
+const USER_API_URL = "https://habitflow-backend-xu2r.onrender.com/api/users/me";
 
 
 const token = localStorage.getItem("token");

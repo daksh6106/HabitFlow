@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/users/register";
+const API_URL = "https://habitflow-backend-xu2r.onrender.com/api/users/register";
 
 async function registerUser() {
 

@@ -2,7 +2,7 @@
 // HabitFlow - My Habits
 // =======================================
 
-const API_URL = "http://localhost:5000/api/habits";
+const API_URL = "https://habitflow-backend-xu2r.onrender.com/api/habits";
 
 const token = localStorage.getItem("token");
 

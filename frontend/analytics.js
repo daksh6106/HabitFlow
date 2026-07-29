@@ -3,7 +3,7 @@
 // =======================================
 
 
-const ANALYTICS_API_URL = "http://localhost:5000/api/habits";
+const ANALYTICS_API_URL = "https://habitflow-backend-xu2r.onrender.com/api/habits";
 
 
 const token = localStorage.getItem("token");
