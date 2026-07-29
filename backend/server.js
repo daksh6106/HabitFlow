@@ -18,10 +18,11 @@ const app = express();
 // Middleware
 app.use(cors({
     origin: [
-        "https://habit-flow-8vok-eta.vercel.app",
-        "http://127.0.0.1:5500",
-        "http://localhost:5500"
-    ],
+    "https://habit-flow-blue-eight.vercel.app",
+    "https://habit-flow-8vok-eta.vercel.app",
+    "http://127.0.0.1:5500",
+    "http://localhost:5500"
+],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
