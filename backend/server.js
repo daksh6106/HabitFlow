@@ -1,7 +1,3 @@
-console.log("Server started");
-console.log("MONGO_URI exists:", !!process.env.MONGO_URI);
-console.log("JWT_SECRET exists:", !!process.env.JWT_SECRET);
-
 const dns = require("dns");
 
 dns.setServers([
@@ -9,62 +5,48 @@ dns.setServers([
   "1.1.1.1"
 ]);
 
-require("dotenv").config();
-
+const userRoutes = require("./routes/userRoutes");
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-
 const habitRoutes = require("./routes/habitRoutes");
-const userRoutes = require("./routes/userRoutes");
+require("dotenv").config();
 
 const app = express();
+
 
 // Middleware
 app.use(cors());
 app.use(express.json());
-
-// Routes
 app.use("/api/habits", habitRoutes);
 app.use("/api/users", userRoutes);
 
-// Test Routes
+
+// Home Test Route
 app.get("/", (req, res) => {
     res.send("HabitFlow Backend Running 🚀");
 });
 
+
+// Frontend Connection Test Route
 app.get("/api/test", (req, res) => {
     res.json({
         message: "Backend Connected Successfully 🚀"
     });
 });
 
+
 // MongoDB Connection
-let isConnected = false;
-
-async function connectDB() {
-    if (isConnected) return;
-
-    await mongoose.connect(process.env.MONGO_URI);
-
-    isConnected = true;
+mongoose.connect(process.env.MONGO_URI)
+.then(() => {
     console.log("✅ MongoDB Connected");
-}
 
-app.use(async (req, res, next) => {
-    await connectDB();
-    next();
-});
-
-// Local Development
-if (process.env.NODE_ENV !== "production") {
-    const PORT = process.env.PORT || 5000;
-
-    connectDB().then(() => {
-        app.listen(PORT, () => {
-            console.log(`🚀 Server running on port ${PORT}`);
-        });
+    app.listen(5000, () => {
+        console.log("🚀 Server running on port 5000");
     });
-}
 
-module.exports = app;
+})
+.catch((err) => {
+    console.log("❌ MongoDB Connection Error:");
+    console.log(err);
+});
